@@ -62,9 +62,10 @@
         method: "POST",
         body: JSON.stringify({ quotation_input: properQuotationInput }),
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
         },
+        credentials: 'include'
       });
       success = resp.ok;
       if (success) {

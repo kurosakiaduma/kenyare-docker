@@ -41,6 +41,8 @@ services:
       options:
         max-size: "200k"  # Max size of log file
         max-file: "10"  # Max number of log files
+    networks:
+      - kenyare-network
 
   # Backend service configuration
   kenyare-backend:
@@ -78,6 +80,8 @@ services:
       options:
         max-size: "200k"  # Max size of log file
         max-file: "10"  # Max number of log files
+    networks:
+      - kenyare-network
 
   # NGINX service configuration
   nginx:
@@ -128,3 +132,5 @@ networks:
     ipam:
       config:
         - subnet: 172.28.0.0/16  # Custom subnet for the network
+  kenyare-network:
+    driver: bridge
