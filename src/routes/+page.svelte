@@ -25,7 +25,7 @@
   let toastIsError = false;
   let toastText = "";
   let toastShowTimeout: NodeJS.Timeout | null = null;
-  const defaultHometext = "Welcome to the Kenyare PI AI Underwriter";
+  const defaultHometext = "Welcome to the AI Underwriter";
   let homeText = defaultHometext;
 
   function showToast(text: string, isError = false, duration_ms = 4000) {
