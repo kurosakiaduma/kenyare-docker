@@ -1,4 +1,3 @@
-import requests
 import threading
 import time
 import logging
@@ -8,6 +7,7 @@ from datetime import datetime
 import json
 from typing import List, Dict
 import sys
+from security import safe_requests
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +41,7 @@ class StressTest:
         }
 
         try:
-            response = requests.get(
+            response = safe_requests.get(
                 self.base_url,
                 timeout=30,
                 headers={'User-Agent': 'StressTest/1.0'}
